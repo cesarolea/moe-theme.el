@@ -5,7 +5,7 @@
 
 ;;; Code:
 
-(deftheme moe-dark
+(deftheme moe-dracula
   "Face colors for 256 colors terminal (dark background).
 Moe, moe, kyun!")
 
@@ -31,11 +31,10 @@ Moe, moe, kyun!")
       (magenta-0 "#ffafd7") (magenta-00 "#ffd7ff")
       (orange-0 "#ffaf87") (orange-00 "#ffd787") (orange-000 "#ffd7af")
       (linum-dark "#87875f") (linum-light "#d7d7af")
-      )
-
+      (current-line-highlight "#3d3f4a"))
 
   (custom-theme-set-faces
-   'moe-dark
+   'moe-dracula
    ;; Ensure sufficient contrast on low-color terminals.
    `(default ((((class color) (min-colors 4096))
 	       (:foreground ,white-1 :background ,black-5))
@@ -60,6 +59,7 @@ Moe, moe, kyun!")
    `(show-paren-match ((,class (:background ,blue-3 :foreground nil))))
    `(header-line ((,class (:background ,blue-3 :foreground ,white-0))))
    `(help-argument-name ((,class (:foreground ,magenta-1 :italic t))))
+   `(highlight-current-line-face ((,class (:background ,current-line-highlight))))
 
    ;; Mode line & frames' faces
    `(mode-line ((,class (:box nil :background ,blue-0 :foreground ,blue-3))))
@@ -900,19 +900,19 @@ Moe, moe, kyun!")
    `(hydra-face-amaranth ((,class (:foreground ,magenta-2)))))
 
   (custom-theme-set-variables
-   'moe-dark
+   'moe-dracula
    `(ansi-color-names-vector [,black-5 ,red-0 ,green-0 ,yellow-1
                                        ,blue-1 ,purple-1 ,blue-0 ,white-1])))
 
 ;; fix wrong default face under GUI version Emacs
 (if window-system
     (progn
-      (set-background-color "#303030")
+      (set-background-color "#282a36")
       (set-foreground-color "#c6c6c6")))
 
-(setq moe-theme-which-enabled 'dark)
+(setq moe-theme-which-enabled 'dracula)
 
-(provide-theme 'moe-dark)
+(provide-theme 'moe-dracula)
 
 ;; Local Variables:
 ;; no-byte-compile: t

@@ -330,7 +330,7 @@ Don't setq this manually.")
       (powerline-moe-theme)))
 
 (defun moe-dark ()
-  "Load moe-light-theme with your customizations."
+  "Load moe-dark-theme with your customizations."
   (interactive)
   (if (not (null moe-theme-revert-theme))
       (load-theme 'moe-dark t))
@@ -340,6 +340,63 @@ Don't setq this manually.")
   (if window-system
     (progn
       (set-background-color "#303030")
+      (set-foreground-color "#c6c6c6")))
+
+  (moe-theme-resize-font-size)
+  (cond ((eq moe-theme-mode-line-color 'blue)
+         (set-face-attribute 'mode-line nil :background "#afd7ff" :foreground "#005f87")
+         (set-face-attribute 'mode-line-buffer-id nil :background "#afd7ff" :foreground "#080808")
+         (set-face-attribute 'minibuffer-prompt nil :foreground "#005f87" :background "#afd7ff"))
+        ((eq moe-theme-mode-line-color 'green)
+         (set-face-attribute 'mode-line nil :background "#afdf77" :foreground "#005f00")
+         (set-face-attribute 'mode-line-buffer-id nil :background "#afdf77" :foreground "#080808")
+         (set-face-attribute 'minibuffer-prompt nil :foreground "#005f00" :background "#a1db00"))
+        ((eq moe-theme-mode-line-color 'orange)
+         (set-face-attribute 'mode-line nil :background "#ffaf5f" :foreground "#b75f00")
+         (set-face-attribute 'mode-line-buffer-id nil :background "#ffaf5f" :foreground "#080808")
+         (set-face-attribute 'minibuffer-prompt nil :foreground "#080808" :background "#ffaf5f"))
+        ((eq moe-theme-mode-line-color 'magenta)
+         (set-face-attribute 'mode-line nil :background "#ffafd7" :foreground "#cc1f8b")
+         (set-face-attribute 'mode-line-buffer-id nil :background "#ffafd7" :foreground "#080808")
+         (set-face-attribute 'minibuffer-prompt nil :foreground "#ff1f8b" :background "#ffffff"))
+        ((eq moe-theme-mode-line-color 'yellow)
+         (set-face-attribute 'mode-line nil :background "#fce94f" :foreground "#875f00")
+         (set-face-attribute 'mode-line-buffer-id nil :background "#fce94f" :foreground "#080808")
+         (set-face-attribute 'minibuffer-prompt nil :foreground "#875f00" :background "#ffff87"))
+        ((eq moe-theme-mode-line-color 'purple)
+         (set-face-attribute 'mode-line nil :background "#e6a8df" :foreground "#6c0099")
+         (set-face-attribute 'mode-line-buffer-id nil :background "#e6a8df" :foreground "#080808")
+         (set-face-attribute 'minibuffer-prompt nil :foreground "#6c0099" :background "#e6a8df"))
+        ((eq moe-theme-mode-line-color 'red)
+         (set-face-attribute 'mode-line nil :background "#ef2929" :foreground "#ffffff")
+         (set-face-attribute 'mode-line-buffer-id nil :background "#ef2929" :foreground "#080808")
+         (set-face-attribute 'minibuffer-prompt nil :foreground "#a40000" :background "#ffafaf"))
+        ((eq moe-theme-mode-line-color 'cyan)
+         (set-face-attribute 'mode-line nil :background "#87d7af" :foreground "#005f5f")
+         (set-face-attribute 'mode-line-buffer-id nil :background "#87d7af" :foreground "#080808")
+         (set-face-attribute 'minibuffer-prompt nil :foreground "#005f5f" :background "#87d7af"))
+        ((eq moe-theme-mode-line-color 'w/b)
+         (set-face-attribute 'mode-line nil :background "#ffffff" :foreground "#3a3a3a")
+         (set-face-attribute 'mode-line-buffer-id nil :background "#9e9e9e" :foreground "#080808")
+         (set-face-attribute 'minibuffer-prompt nil :foreground "#3e3e3e" :background "#ffffff")))
+
+  (if (null moe-theme-highlight-buffer-id)
+      (set-face-attribute 'mode-line-buffer-id nil :background nil))
+
+  (if (eq moe-theme-powerline-enable-p t)
+      (powerline-moe-theme)))
+
+(defun moe-dracula ()
+  "Load moe-dark-theme with your customizations."
+  (interactive)
+  (if (not (null moe-theme-revert-theme))
+      (load-theme 'moe-dracula t))
+
+  ;; In Emacs 24.3.50.1 , background-color may cannot be changed under GUI Emacs.
+  ;; So do this again.
+  (if window-system
+    (progn
+      (set-background-color "#282a36")
       (set-foreground-color "#c6c6c6")))
 
   (moe-theme-resize-font-size)
