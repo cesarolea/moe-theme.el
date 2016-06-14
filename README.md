@@ -29,7 +29,7 @@
 
 ## Screenshot
 ### Dracula theme
-<a href="https://raw.github.com/kuanyui/moe-theme.el/master/pics/dracula01.png"><img src="pics/dracula01.png" width="355" height="192"/></a>
+<a href="https://raw.github.com/cesarolea/moe-theme.el/master/pics/dracula01.png"><img src="pics/dracula01.png" width="355" height="192"/></a>
 ### Dark and Light theme
 <a href="https://raw.github.com/kuanyui/moe-theme.el/master/pics/light01.png"><img src="pics/light01.png" width="355" height="192"/></a>
 <a href="https://raw.github.com/kuanyui/moe-theme.el/master/pics/dark02.png"><img src="pics/dark02.png" width="355" height="192"/></a>
